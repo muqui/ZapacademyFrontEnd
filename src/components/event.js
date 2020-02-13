@@ -1,8 +1,10 @@
 // Event.js
 import React, { Component } from 'react'
 import {Redirect} from 'react-router-dom'
+import Menu from '../components/menu';
 const axios = require('axios')
 //import Menu from './components/menu';
+
 export default class Event extends Component{
     constructor(props) {
       super(props)
@@ -77,7 +79,7 @@ export default class Event extends Component{
      }
     return ( 
         <div>
-         
+         <Menu />
      <h1>Crear evento</h1>
       <form onSubmit={this.handleOnAddUser}>
          <input type="text" placeholder="Nombre" name="nombre" value={this.state.nombre} onChange={this.onChange}   />

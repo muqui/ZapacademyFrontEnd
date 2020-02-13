@@ -67,12 +67,16 @@ export default class Login extends Component{
       return <Redirect to ="/admin" />
     }
     return ( 
-      <form onSubmit={this.handleOnAddUser}>
+      <div>
+        <h1>Formulario</h1>
+<form onSubmit={this.handleOnAddUser}>
          <input type="email" placeholder="email" name="email" value={this.state.email} onChange={this.onChange}   />
           <input type="text" placeholder="password" name="password"  value={this.state.password} onChange={this.onChange}  />
          
           <input type="submit" value="Entrar" />
       </form>
+      </div>
+      
     );
   }
   

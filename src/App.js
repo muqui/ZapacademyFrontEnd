@@ -6,6 +6,7 @@ import Login from './components/Login';
 import Admin from './components/Admin';
 import Logout from './components/Logout';
 import Event from './components/event';
+import MisEventos from './components/misEventos';
 
 
 class App extends Component{
@@ -18,6 +19,7 @@ class App extends Component{
             
         <Route exact path='/' component={Login} />
             <Route path='/event' component={Event} />
+            <Route path='/events' component={MisEventos} />
            
            
             <Route path='/admin' component={Admin} />

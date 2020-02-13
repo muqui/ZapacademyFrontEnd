@@ -10,9 +10,10 @@ class Menu extends Component {
           <ul className="navbar-nav mr-auto">
          
             <li><Link to={'/event'} className="nav-link">Crear evento</Link></li>
+            <li><Link to={'/events'} className="nav-link">Eventos</Link></li>
             <li><Link to={'/logout'} className="nav-link">Salir</Link></li>
 
-
+            
            
           </ul>
           </nav>
