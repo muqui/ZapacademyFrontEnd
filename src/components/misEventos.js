@@ -3,16 +3,23 @@ import {Redirect} from 'react-router-dom'
 import DynamicSelect from './DynamicSelect';
 import Menu from '../components/menu';
 import Events from './listEvents'; 
+import Encabezado from './encabezado';
 const axios = require('axios');
 
 
 class App extends Component {
   constructor(props){
     super(props)
+    const token = localStorage.getItem("token")
+         let loggedIn = true
+         if(token == null){
+            loggedIn = false
+         }
     this.state={
       selectedValue: 'Nothing selected',
       selectListEvent: [],
-      events:[]
+      events:[],
+      loggedIn
       
     }
   }
@@ -77,6 +84,7 @@ class App extends Component {
     return (
       <div className="App">
         <Menu />
+        <Encabezado/>
         <header className="App-header">
         
           <h1 className="App-title">Lista de eventos.</h1>

@@ -8,9 +8,10 @@ class Menu extends Component {
         
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <ul className="navbar-nav mr-auto">
-         
+          <li><Link to={'/admin'} className="nav-link">Beneficiarios</Link></li>
             <li><Link to={'/event'} className="nav-link">Crear evento</Link></li>
             <li><Link to={'/events'} className="nav-link">Eventos</Link></li>
+            
             <li><Link to={'/logout'} className="nav-link">Salir</Link></li>
 
             

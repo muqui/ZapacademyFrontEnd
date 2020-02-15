@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import {Redirect} from 'react-router-dom'
 import Menu from '../components/menu';
+import Encabezado from '../components/encabezado';
 const axios = require('axios')
 //import Menu from './components/menu';
 
@@ -82,6 +83,7 @@ export default class Event extends Component{
     return ( 
         <div>
          <Menu />
+         <Encabezado/>
      <h1>Crear evento</h1>
    
        

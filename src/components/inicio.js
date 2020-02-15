@@ -2,6 +2,8 @@
 
 import React, { Component } from 'react';
 import Eventos from '../components/listaEventos';
+import  Encabezado from '../components/encabezado';
+import '../components/inicio.css';
 const axios = require('axios')
 class About extends Component {
     constructor(props) {
@@ -54,18 +56,20 @@ class About extends Component {
 
   render() {
     return (
-        <div className="container mt-3">
+        <div className="container mt-3 ">
+         
+          <Encabezado />
          
 <form onSubmit={this.handleOnAddUser}>
     <label>Capture su CURP para verificar su evento</label>
-    <div class="input-group mb-3">
+    <div className="input-group mb-3">
     <input type="text"  className="form-control" placeholder="CURP" name="curp" value={this.state.curp} onChange={this.onChange}   />
       
     </div>
          
           <input type="submit"  class="btn btn-primary"   value="Buscar" />
       </form>
-    
+     
       <Eventos  className="form-control" events={this.state.selectListEvent}/>
       
     
