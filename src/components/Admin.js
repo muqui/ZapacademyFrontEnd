@@ -18,9 +18,9 @@ class Admin extends Component {
         }
 
   render() {
-    console.log("token" +  localStorage.getItem("token"));
+    //Regresa al login
      if(this.state.loggedIn === false){
-         return < Redirect to ="/"/>
+         return < Redirect to ="/login"/>
      }
 
     return (

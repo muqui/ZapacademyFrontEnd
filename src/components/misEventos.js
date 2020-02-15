@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Redirect} from 'react-router-dom'
 import DynamicSelect from './DynamicSelect';
 import Menu from '../components/menu';
 import Events from './listEvents'; 
@@ -69,6 +70,10 @@ class App extends Component {
       console.log("GET")
   }
   render() {
+      //Regresa al login
+      if(this.state.loggedIn === false){
+        return < Redirect to ="/login"/>
+    }
     return (
       <div className="App">
         <Menu />

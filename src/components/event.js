@@ -77,7 +77,7 @@ export default class Event extends Component{
   render(){
     console.log("token en event ==="  +  localStorage.getItem("token"));
      if(this.state.loggedIn === false){
-         return < Redirect to ="/"/>
+         return < Redirect to ="/login"/>
      }
     return ( 
         <div>

@@ -58,7 +58,7 @@ class Events extends Component{
                     <td >{events.apellido_paterno}</td>
                     <td >{events.apellido_materno}</td>  
                     <td >{events.status ? 'asistio':'No asistio'} </td>
-                    <td > <button disabled={!events.status }   onClick={this.openModalHandler}>{events.status ? 'Evidencia':'Sin evidencia'}</button> </td>      
+                    <td > <button className="btn btn-primary"  disabled={!events.status }   onClick={this.openModalHandler}>{events.status ? 'Evidencia':'Sin evidencia'}</button> </td>      
                     </tr>
                 ))}
               </table>
