@@ -51,25 +51,23 @@ class Events extends Component{
        
    
      </tr>      
-               {events.map((events) => (             
+               {events.map((events) => (   
+                  
+                          
                 <tr >
                     <td  scope="row">{events.CURP}</td>
                     <td >{events.nombre}</td>  
                     <td >{events.apellido_paterno}</td>
                     <td >{events.apellido_materno}</td>  
-                    <td >{events.status ? 'asistio':'No asistio'} </td>
-                    <td > <button disabled={!events.status }   onClick={this.openModalHandler}>{events.status ? 'Evidencia':'Sin evidencia'}</button> </td>      
-                    </tr>
+                  
+   
+                   </tr>
                 ))}
               </table>
-              <Modal
-                    className="modal"
-                    show={this.state.isShowing}
-                    close={this.closeModalHandler}>
-                        Maybe aircrafts fly very high because they don't want to be seen in plane sight?
-                </Modal>
+
+            
              </div>
-              )
+        )
     }
 }
 
