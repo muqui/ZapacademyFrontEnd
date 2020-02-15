@@ -19,6 +19,7 @@ export default class Event extends Component{
           disabled : false,
             nombre:'',  
             fecha_inicio:'',
+            lugar:'',
             fecha_fin:'', 
           loggedIn
           }
@@ -38,7 +39,7 @@ export default class Event extends Component{
         this.refs.btn.setAttribute("disabled", "disabled");
         let currentComponent = this;
         this.value = true;
-        const {nombre, fecha_inicio, fecha_fin} = this.state
+        const {nombre, fecha_inicio, fecha_fin, lugar} = this.state
         const id = localStorage.getItem("id")
         console.log("ID  " + id);
         //console.log("fechaInicio" +  fechaInicio);
@@ -56,6 +57,7 @@ export default class Event extends Component{
           nombre,
           fecha_inicio,
           fecha_fin,
+          lugar,
           id
 
         })
@@ -81,15 +83,32 @@ export default class Event extends Component{
         <div>
          <Menu />
      <h1>Crear evento</h1>
+   
+       
       <form onSubmit={this.handleOnAddUser}>
-         <input type="text" placeholder="Nombre" name="nombre" value={this.state.nombre} onChange={this.onChange}   />
-         <br></br>
-         <input type="date" placeholder="Fecha inicio" name="fecha_inicio"  value={this.state.fecha_inicio} onChange={this.onChange}  />
-         <br></br>
-          <input type="date" placeholder="Fecha Fin" name="fecha_fin"  value={this.state.fecha_fin} onChange={this.onChange}  />
-          <br></br>
-          <input type="submit" ref="btn" value="Crear Evento"   /> 
+      <div class="input-group mb-3">
+      <input type="text" className="form-control"  placeholder="Nombre" name="nombre" value={this.state.nombre} onChange={this.onChange}   />
+      </div>
+      <div class="input-group mb-3">
+      <input type="text" className="form-control"  placeholder="lugar" name="lugar" value={this.state.lugar} onChange={this.onChange}   />
+         
+      </div>
+      <div class="input-group mb-3">
+      <input type="date" className="form-control"  placeholder="Fecha inicio" name="fecha_inicio"  value={this.state.fecha_inicio} onChange={this.onChange}  />
+       
+        </div>   
+        <div class="input-group mb-3">
+        <input type="date"  className="form-control" placeholder="Fecha Fin" name="fecha_fin"  value={this.state.fecha_fin} onChange={this.onChange}  />
+        
+        </div>
+     
+        
+         
+         
+         
+          <input type="submit" class="btn btn-primary"  ref="btn" value="Crear Evento"   /> 
       </form>
+     
         </div>
    
     );

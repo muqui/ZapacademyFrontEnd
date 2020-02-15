@@ -7,6 +7,7 @@ import Admin from './components/Admin';
 import Logout from './components/Logout';
 import Event from './components/event';
 import MisEventos from './components/misEventos';
+import Inicio from './components/inicio';
 
 
 class App extends Component{
@@ -17,7 +18,8 @@ class App extends Component{
      
         <Switch>
             
-        <Route exact path='/' component={Login} />
+        <Route exact path='/' component={Inicio} />
+        <Route exact path='/login' component={Login} />
             <Route path='/event' component={Event} />
             <Route path='/events' component={MisEventos} />
            

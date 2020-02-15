@@ -13,6 +13,7 @@ class About extends Component {
            
             }
             this.onChange = this.onChange.bind(this)
+            this.handleOnAddUser = this.handleOnAddUser.bind(this)  //si falta: Unhandled Rejection (TypeError): Cannot read property 'setState' of undefined
             
         }
         onChange(e){
@@ -24,17 +25,21 @@ class About extends Component {
       
         event.preventDefault();
         let currentComponent = this;
-        var url = 'https://zapacademy.herokuapp.com/evento/beneficiarios/CONA850603HJCRVL09';
+        const {curp} = this.state
+        var url = 'https://zapacademy.herokuapp.com/beneficiarios/' + curp;
        
         axios.get(url, {
           headers: {
             'Access-Control-Allow-Origin': '*',
-            'Authorization': `bearer ${localStorage.getItem("token")}`
+            
           }
         })
           .then(res => {
             const token  = res.data
-            
+            currentComponent.setState({
+              selectListEvent : token      
+              
+          })
            
            
             console.log(res.data)
@@ -49,15 +54,21 @@ class About extends Component {
 
   render() {
     return (
-        <div>
+        <div className="container mt-3">
          
 <form onSubmit={this.handleOnAddUser}>
     <label>Capture su CURP para verificar su evento</label>
-         <input type="text" placeholder="CURP" name="curp" value={this.state.curp} onChange={this.onChange}   />
+    <div class="input-group mb-3">
+    <input type="text"  className="form-control" placeholder="CURP" name="curp" value={this.state.curp} onChange={this.onChange}   />
+      
+    </div>
          
-          <input type="submit" value="Buscar" />
+          <input type="submit"  class="btn btn-primary"   value="Buscar" />
       </form>
-      <Eventos  events={this.state.selectListEvent}/>
+    
+      <Eventos  className="form-control" events={this.state.selectListEvent}/>
+      
+    
         </div>
     );
   }
