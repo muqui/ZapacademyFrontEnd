@@ -2,7 +2,7 @@
 
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import Modal from '../components/popup';
+import Modal from '../components/editBeneficiary';
 import '../components/modal.css';
 
 
@@ -64,6 +64,7 @@ class Beneficiario extends Component{
               </table>
               <Modal
                     className="modal"
+                   
                     show={this.state.isShowing}
                     close={this.closeModalHandler}>
                        

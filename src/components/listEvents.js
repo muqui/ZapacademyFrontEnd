@@ -12,13 +12,14 @@ class Events extends Component{
         super(props);
         this.state = {
             isShowing: false,
+            image: '',
             selectListEvent: [],
         }
 
     }
 
     openModalHandler = (image) => {
-       
+      
         this.setState({
             isShowing: true,
             image: image
@@ -58,14 +59,17 @@ class Events extends Component{
                     <td >{events.apellido_paterno}</td>
                     <td >{events.apellido_materno}</td>  
                     <td >{events.status ? 'asistio':'No asistio'} </td>
-                    <td > <button className="btn btn-primary"  disabled={!events.status }   onClick={this.openModalHandler}>{events.status ? 'Evidencia':'Sin evidencia'}</button> </td>      
+                    <td > <button className="btn btn-primary"  disabled={!events.status }   onClick={()=> this.openModalHandler(events.imagen)}>{events.status ? 'Evidencia':'Sin evidencia'}</button> </td>      
                     </tr>
                 ))}
               </table>
               <Modal
                     className="modal"
+                  
                     show={this.state.isShowing}
+                    image = {this.state.image}
                     close={this.closeModalHandler}>
+                        
                       </Modal>
              </div>
               )
