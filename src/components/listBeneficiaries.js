@@ -17,11 +17,11 @@ class Beneficiario extends Component{
 
     }
 
-    openModalHandler = (image) => {
+    openModalHandler = () => {
        
         this.setState({
             isShowing: true,
-            image: image
+           
         });
     }
 

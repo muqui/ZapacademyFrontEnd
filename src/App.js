@@ -8,6 +8,7 @@ import Logout from './components/Logout';
 import Event from './components/event';
 import MisEventos from './components/misEventos';
 import Inicio from './components/inicio';
+import Altabeneficiario from './components/addBeneficiary';
 
 
 class App extends Component{
@@ -23,7 +24,7 @@ class App extends Component{
             <Route path='/event' component={Event} />
             <Route path='/events' component={MisEventos} />
            
-           
+            <Route path='/registrar' component={Altabeneficiario} />
             <Route path='/admin' component={Admin} />
             <Route path='/logout' component={Logout} />
 

@@ -66,8 +66,7 @@ class Events extends Component{
                     className="modal"
                     show={this.state.isShowing}
                     close={this.closeModalHandler}>
-                        Maybe aircrafts fly very high because they don't want to be seen in plane sight?
-                </Modal>
+                      </Modal>
              </div>
               )
     }
