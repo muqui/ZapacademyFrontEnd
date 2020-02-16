@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import {Link, Redirect} from 'react-router-dom'
-
+import AddBeneficiary from '../components/addBeneficiary';
 import Menu from '../components/menu';
 import Beneficiario from '../components/listBeneficiaries';
 const axios = require('axios')
@@ -18,6 +18,7 @@ class Admin extends Component {
          this.state={
           curp:'',
             loggedIn,
+            isShowing: false,
             beneficiaries:[],
             }
             this.onChange = this.onChange.bind(this)
@@ -29,6 +30,19 @@ class Admin extends Component {
             [e.target.name]: e.target.value
           })
         }
+        openModalHandler = (image) => {
+       
+          this.setState({
+              isShowing: true,
+              image: image
+          });
+      }
+  
+      closeModalHandler = () => {
+          this.setState({
+              isShowing: false
+          });
+      }
         handleOnFindPerson (event) {
     
       event.preventDefault();
@@ -99,11 +113,19 @@ class Admin extends Component {
     </div>
          
           <input type="submit"  class="btn btn-primary"   value="Buscar" />
-      </form>
+         </form>
+         <button className="btn btn-primary"     onClick={this.openModalHandler}>Añadir beneficiario </button>  
+     
+                
           <h2>Usuarios del programa. </h2>
           {this.state.beneficiaries.length > 0 ? <Beneficiario  events={this.state.beneficiaries}/>: 'Sin resultado..'}
           
-          
+          <AddBeneficiary
+                    className="modal"
+                    show={this.state.isShowing}
+                    close={this.closeModalHandler}>
+                        Maybe aircrafts fly very high because they don't want to be seen in plane sight?
+                </AddBeneficiary>
         </div>
     );
   }
