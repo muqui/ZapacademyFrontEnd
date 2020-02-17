@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {Redirect} from 'react-router-dom'
+import Encabezado from '../components/encabezado';
 const axios = require('axios')
 
 export default class Login extends Component{
@@ -68,7 +69,8 @@ export default class Login extends Component{
     }
     return ( 
       <div className="container mt-3">
-        <h1>Login</h1>
+        <Encabezado />
+        <h1 className="center"  >Login</h1>
 <form onSubmit={this.handleOnAddUser}>
 <div className="input-group mb-3">
 <input type="email"  className="form-control"  placeholder="email" name="email" value={this.state.email} onChange={this.onChange}   />
