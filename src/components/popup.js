@@ -9,15 +9,17 @@ const modal = (props) => {
             <div className="modal-wrapper"
             
                 style={{
+                    visibility: props.show ? 'visible' : 'hidden',
                     transform: props.show ? 'translateY(0vh)' : 'translateY(-100vh)',
-                    opacity: props.show ? '1' : '0'
+                    opacity: props.show ? '1' : '0',
+                    width : '400px'
                 }}>
                 <div className="modal-header">
-                    <h3> {props.image}</h3>
+                    <h3> Evidencia</h3>
                     <span className="close-modal-btn" onClick={props.close}>×</span>
                 </div>
                 <div className="modal-body">
-                <img src={'https://zapacademy.herokuapp.com/'+props.image+'.jpg'} width="400px" height="500px" />
+                <img src={'https://zapacademy.herokuapp.com/'+props.image+'.jpg'} width="350px" height="450px" />
                     <p>
                         {props.children}
                        

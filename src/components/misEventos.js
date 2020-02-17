@@ -84,7 +84,7 @@ class App extends Component {
     return (
       <div className="App">
         <Menu />
-        <Encabezado/>
+      
         <header className="App-header">
         
           <h1 className="App-title">Lista de eventos.</h1>

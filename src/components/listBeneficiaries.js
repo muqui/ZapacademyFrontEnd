@@ -1,6 +1,7 @@
 
 
 import React, {Component} from 'react';
+
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Modal from '../components/editBeneficiary';
 import '../components/modal.css';
@@ -12,16 +13,17 @@ class Beneficiario extends Component{
         super(props);
         this.state = {
             isShowing: false,
+            beneficiary: [],
             selectListEvent: [],
         }
 
     }
 
-    openModalHandler = () => {
-       
+    openModalHandler = (beneficiary) => {
+      
         this.setState({
             isShowing: true,
-           
+            beneficiary :beneficiary
         });
     }
 
@@ -29,11 +31,12 @@ class Beneficiario extends Component{
         this.setState({
             isShowing: false
         });
+        window.location.reload();
     }
 
     render(){
-        let events = this.props.events;
-        //this.props && this.props.partners.length > 0 ?
+       let events = this.props.events;
+       
        
             return (
                 <div>
@@ -57,15 +60,16 @@ class Beneficiario extends Component{
                     <td >{events.nombre}</td>  
                     <td >{events.apellido_paterno}</td>
                     <td >{events.apellido_materno}</td>  
-                    <td > <button className="btn btn-primary"     onClick={this.openModalHandler}>Editar</button> </td>      
+                    <td > <button className="btn btn-primary"     onClick={()=> this.openModalHandler(events)}>Editar</button> </td>      
                  
                          </tr>
                 ))}
               </table>
               <Modal
-                    className="modal"
+                    className="invisible"
                    
                     show={this.state.isShowing}
+                    beneficiary = {this.state.beneficiary}
                     close={this.closeModalHandler}>
                        
                 </Modal>

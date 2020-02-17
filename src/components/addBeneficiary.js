@@ -81,7 +81,7 @@ const axios = require('axios')
             .then(function (response) {
               
                
-          
+          alert(response.data)
           
            
            
@@ -100,7 +100,7 @@ const axios = require('axios')
             return (
                 <div>
                     <Menu />
-         <Encabezado/>
+      
                   
                     
                    

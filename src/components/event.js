@@ -83,7 +83,7 @@ export default class Event extends Component{
     return ( 
         <div>
          <Menu />
-         <Encabezado/>
+       
      <h1>Crear evento</h1>
    
        
