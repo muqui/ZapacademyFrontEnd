@@ -43,11 +43,16 @@ class About extends Component {
               
           })
            
+           if(res.data.lenght < 0){
+            console.log("Sin resultados")
            
-            console.log(res.data)
-            return token
+           }
+           alert("OK")
+            var r = res.data;
+            console.log(r);
+           // return token
           });
-          console.log("GET")
+         
        
  
         
@@ -61,7 +66,7 @@ class About extends Component {
           <Encabezado />
          
 <form onSubmit={this.handleOnAddUser}>
-    <label>Capture su CURP para verificar su evento</label>
+    <label>Capture su CURP para verificar su evento: </label>
     <div className="input-group mb-3">
     <input type="text"  className="form-control" placeholder="CURP" name="curp" value={this.state.curp} onChange={this.onChange}   />
       

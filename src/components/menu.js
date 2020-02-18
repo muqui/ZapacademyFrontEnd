@@ -7,7 +7,7 @@ class Menu extends Component {
     return (
         
           <nav className="navbar navbar-expand-lg navbar-light   navbar-dark bg-primary">
-            <a class="navbar-brand" href="#">              <img src={Logo} alt='website logo' width="150px" /></a>
+            <a class="navbar-brand" href="/admin">              <img src={Logo} alt='website logo' width="150px" /></a>
 
 
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
