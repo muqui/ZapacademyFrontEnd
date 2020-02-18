@@ -84,7 +84,25 @@ const axios = require('axios')
           alert(response.data)
           
            
-           
+          currentComponent.setState({
+            
+            curp:'',
+            id:'',
+            nombre:'',
+            apellido_paterno:'',
+            apellido_materno:'',
+            sexo:'',
+            calle:'',
+            numero_int:'',
+            numero_ext:'',
+          cp:'',
+              colonia:'',
+            municipio:'',
+            estado:'',
+            telefono:'',
+            celular:'',
+          correo:'',
+          });
             
               
             })

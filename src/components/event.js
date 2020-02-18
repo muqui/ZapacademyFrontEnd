@@ -66,9 +66,18 @@ export default class Event extends Component{
           
           
           
-          currentComponent.setState({disabled: false});
+          currentComponent.setState({
+            disabled: false,
+            nombre : '',
+            
+            fecha_inicio:'',
+            fecha_fin:'',
+            lugar:'',
+            
+          });
       
           console.log(response);
+          alert(response.data);
           
           currentComponent.refs.btn.removeAttribute("disabled");
         })
